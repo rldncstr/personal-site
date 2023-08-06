@@ -1,0 +1,40 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #1B6B93, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+.title-bg {
+    background-color: #1B6B93;
+}
+
+h1 {
+    color: white;
+    font-size: 80pt;
+    text-transform: uppercase;
+}
+
+.profile-img {
+    opacity: 100%;
+}
+
+.icon-square {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+}
+
+.footer {
+    background-color: #1B6B93;
+}
+
+.exp-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
