@@ -3,9 +3,43 @@ html {
 }
 
 .gradient-background {
-    background: linear-gradient(300deg, #1B6B93, #ff4c68, #ef8172);
+    background: linear-gradient(300deg, #1B6B93, #4FC0D0, #164B60);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
+}
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    transition: top 0.3s;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px;
+
+}
+
+#navbar a.active {
+    background-color: #A2FF86;
+    color: black;
+}
+
+
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #ffff;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: #4FC0D0;
+    color: black;
 }
 
 .title-bg {
@@ -16,6 +50,11 @@ h1 {
     color: white;
     font-size: 80pt;
     text-transform: uppercase;
+}
+
+.profession {
+    color: white;
+    font-weight: normal;
 }
 
 .profile-img {
@@ -37,4 +76,33 @@ h1 {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .profile-img {
+        display: none;
+    }
+
+    h1 {
+        font-size: 60pt;
+    }
+
+    .profession {
+        color: white;
+        font-weight: normal;
+        font-size: 16pt;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .profile-img {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .profile-img {
+        display: block;
+    }
 }
