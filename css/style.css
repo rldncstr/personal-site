@@ -2,10 +2,25 @@ html {
     scroll-behavior: smooth;
 }
 
+
 .gradient-background {
     background: linear-gradient(300deg, #1B6B93, #4FC0D0, #164B60);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #navbar {
@@ -17,6 +32,7 @@ html {
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 10px;
+    z-index: 1;
 
 }
 
@@ -25,7 +41,9 @@ html {
     color: black;
 }
 
-
+.container-fluid {
+    padding: 0;
+}
 
 #navbar a {
     float: left;
@@ -67,18 +85,122 @@ h1 {
     border-radius: 0.75rem;
 }
 
-.footer {
-    background-color: #1B6B93;
+.background-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.5)),
+        url(../assets/mountain-climb.jpg);
+    background-size: cover;
 }
 
-.exp-img {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.timeline-section {
+    min-height: 100vh;
+    padding: 100px 15px;
+}
+
+.timeline-items {
+    max-width: 1000px;
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
 }
 
-@media screen and (max-width: 600px) {
+.timeline-items::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #2f363e;
+    left: calc(50% - 1px);
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+    height: 16px;
+    width: 16px;
+    background-color: #A2FF86;
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-date {
+    font-size: 18px;
+    color: #A2FF86;
+    margin: 6px 0 15px;
+}
+
+.timeline-content {
+    background-color: #1B6B93;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+
+/* responsive */
+@media(max-width: 767px) {
+    .timeline-items::before {
+        left: 7px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px;
+    }
+
+    .timeline-dot {
+        left: 0;
+    }
+}
+
+@media(max-width: 600px) {
     .profile-img {
         display: none;
     }
@@ -92,16 +214,25 @@ h1 {
         font-weight: normal;
         font-size: 16pt;
     }
-}
 
-@media screen and (min-width: 600px) {
-    .profile-img {
-        display: none;
+    .container-fluid {
+        padding-right: 12px;
     }
 
 }
 
-@media screen and (min-width: 992px) {
+@media(min-width: 600px) {
+    .profile-img {
+        display: none;
+    }
+
+    .container-fluid {
+        padding-right: 12px;
+    }
+
+}
+
+@media(min-width: 992px) {
     .profile-img {
         display: block;
     }
